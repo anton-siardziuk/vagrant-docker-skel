@@ -1,7 +1,7 @@
 DEV ENV
 =======
 
-WINDOWS
+Windows
 -------
 
     install VirtualBox
@@ -12,7 +12,7 @@ WINDOWS
     (local host) vagrant up
     (local host) $(deploy/vagrant-shell-init)
 
-OSX
+OSX, Linux
 ---
 
     install VirtualBox
