@@ -10,7 +10,8 @@ Windows
     (local host) git clone
     (local host) vagrant plugin install vagrant-winnfsd
     (local host) vagrant up
-    (local host) $(deploy/vagrant-shell-init)
+    ssh to vagrant host
+    (guest host) $(deploy/vagrant-shell-init)
 
 OSX, Linux
 ---
