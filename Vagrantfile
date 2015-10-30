@@ -4,7 +4,7 @@ apt-get update
 apt-get install -y python-dev python-setuptools
 easy_install pip
 pip install ansible
-PYTHONUNBUFFERED=1 ansible-playbook -i LOCAL_FOLDER/deploy/vagrant.sh LOCAL_FOLDER/deploy/vagrant-deploy.yml
+PYTHONUNBUFFERED=1 ansible-playbook -i LOCAL_FOLDER/deploy/inventory/vagrant.sh LOCAL_FOLDER/deploy/playbooks/vagrant-deploy.yml
 SCRIPT
 
 $rebuild = <<SCRIPT
