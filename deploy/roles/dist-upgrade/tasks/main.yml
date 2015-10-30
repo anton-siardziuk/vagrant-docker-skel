@@ -1,0 +1,2 @@
+- name: upgrade
+  apt: update_cache=yes cache_valid_time=86400 upgrade=dist force=yes # 86400 secs/day

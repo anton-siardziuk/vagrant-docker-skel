@@ -1,0 +1,23 @@
+- name: ensure docker from jessie repo removed
+  apt: pkg=docker.io state=absent
+
+- name: add https apt transport
+  apt: pkg=apt-transport-https state=present
+
+- name: add docker repo key
+  apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D state=present
+
+- name: add docker repo
+  apt_repository: repo='deb https://apt.dockerproject.org/repo debian-jessie main' state=present
+
+- name: install docker
+  apt: pkg=docker-engine state=present
+
+- name: ensure docker config dir exists
+  file: dest=/lib/systemd/system/docker.service.d state=directory
+
+- name: configure docker
+  template: src=lib/systemd/system/docker.service.d/exec-start.conf dest=/lib/systemd/system/docker.service.d/exec-start.conf
+  notify:
+    - reload systemd
+    - restart docker
